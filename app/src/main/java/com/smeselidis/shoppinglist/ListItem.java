@@ -1,23 +1,14 @@
 package com.smeselidis.shoppinglist;
 
-public class List {
+public class ListItem {
 
     private int id;
     private String name;
-    private int fav;
+    private String description;
 
-    public List(){
+    public ListItem(){
 
     }
-
-    public int getFav() {
-        return fav;
-    }
-
-    public void setFav(int fav) {
-        this.fav = fav;
-    }
-
 
     public int getId() {
         return id;
@@ -35,5 +26,11 @@ public class List {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

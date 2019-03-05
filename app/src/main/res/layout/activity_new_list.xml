@@ -5,26 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".NewList">
 
     <TextView
-        android:id="@+id/txtVw_tittle"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Shopping List"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="30sp" />
+        android:text="New List"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/txt_listName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
 
     <Button
-        android:id="@+id/btn_nlist"
+        android:id="@+id/btn_addlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="new list" />
-
-    <ListView
-        android:id="@+id/lv_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:text="Button" />
 </LinearLayout>

@@ -12,6 +12,7 @@ public class SQLliteHelper extends SQLiteOpenHelper {
     public static final String TABLE_LISTS = "lists";
     public static final String LISTS_COLUMN_ID = "id";
     public static final String LISTS_COLUMN_NAME = "lname";
+    public static final String LISTS_COLUMN_FAV = "fav";
 
     public static final String TABLE_ITEMS = "items";
     public static final String ITEMS_COLUMN_ID = "id";
@@ -27,11 +28,13 @@ public class SQLliteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE "+ TABLE_LISTS+ "("+
                 LISTS_COLUMN_ID+" integer primary key autoincrement," +
+                LISTS_COLUMN_FAV+ " integer,"+
                 LISTS_COLUMN_NAME+" text not null)");
+
         db.execSQL("CREATE TABLE "+ TABLE_ITEMS+ "("+
-                ITEMS_COLUMN_ID+ "integer primary key autoincrement,"+
-                ITEMS_COLUMN_INAME+ "text not null,"+
-                ITEMS_COLUMN_DESCRIPTION+ "text not null)");
+                ITEMS_COLUMN_ID+ " integer  primary key autoincrement,"+
+                ITEMS_COLUMN_INAME+ " text not null,"+
+                ITEMS_COLUMN_DESCRIPTION+ " text not null)");
 
     }
 
