@@ -5,26 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".ListDetails">
 
     <TextView
-        android:id="@+id/txtVw_tittle"
+        android:id="@+id/txtvw_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Shopping List"
+        android:text="TextView"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@android:color/black"
         android:textSize="30sp" />
-
-    <Button
-        android:id="@+id/btn_newList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="new list" />
-
-    <ListView
-        android:id="@+id/lv_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
 </LinearLayout>

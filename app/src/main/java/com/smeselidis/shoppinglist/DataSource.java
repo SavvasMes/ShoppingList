@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
+
 
 import java.util.ArrayList;
 
@@ -29,19 +29,39 @@ public class DataSource {
         dbHelper.close();
     }
 
-    public ArrayList<List> selectList() {
+    public ArrayList<List> selectLists() {
         ArrayList<List> lists = new ArrayList<>();
-        Cursor cursor = database.query("lists", listCollum, null, null, null,null, null
-        );
-
+        Cursor cursor = database.query("lists", listCollum, null, null, null,null, null);
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            lists.add(this.cursorToList(cursor));
+            cursor.moveToNext();
+        }
 
         return lists;
+    }
+
+    public List selectList(String id){
+        Cursor cursor = database.query("lists", listCollum, "id = ?", new String[] { id }, null, null, null);
+        cursor.moveToFirst();
+        return this.cursorToList(cursor);
+
     }
 
     public void insertList(String name){
         ContentValues contentValues = new ContentValues();
         contentValues.put("lname", name);
+        //contentValues.put("fav", fav);
         database.insert("lists", null, contentValues);
+    }
+
+    private List cursorToList(Cursor cursor){
+        List list = new List();
+        list.setId(cursor.getInt(0));
+        list.setName(cursor.getString(1));
+        list.setFav(cursor.getInt(2));
+
+        return list;
     }
 
 
