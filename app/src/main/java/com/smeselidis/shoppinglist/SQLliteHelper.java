@@ -18,6 +18,7 @@ public class SQLliteHelper extends SQLiteOpenHelper {
     public static final String ITEMS_COLUMN_ID = "id";
     public static final String ITEMS_COLUMN_INAME = "iname";
     public static final String ITEMS_COLUMN_DESCRIPTION = "description";
+    // χρειαζομαι ενα ακομα παιδιο το list_id. θα παρει τη τιμη απο το list table.
 
 
     public SQLliteHelper(Context context){
@@ -34,7 +35,7 @@ public class SQLliteHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE "+ TABLE_ITEMS+ "("+
                 ITEMS_COLUMN_ID+ " integer  primary key autoincrement,"+
                 ITEMS_COLUMN_INAME+ " text not null,"+
-                ITEMS_COLUMN_DESCRIPTION+ " text not null)");
+                ITEMS_COLUMN_DESCRIPTION+ " text )");
 
 
 

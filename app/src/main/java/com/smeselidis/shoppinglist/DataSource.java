@@ -64,5 +64,12 @@ public class DataSource {
         return list;
     }
 
+    public void insertItem (String name, String description){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("iname", name);
+        contentValues.put("description", description);
+        database.insert("items", null, contentValues);
+    }
+
 
 }

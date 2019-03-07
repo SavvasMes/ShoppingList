@@ -15,4 +15,15 @@
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btn_addItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Item" />
+
+    <ListView
+        android:id="@+id/listvw_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
